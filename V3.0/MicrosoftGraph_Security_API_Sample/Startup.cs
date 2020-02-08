@@ -158,7 +158,7 @@ namespace MicrosoftGraph_Security_API_Sample
 
             // enable SPA service if it is client dev environment
             var clientEnv = Environment.GetEnvironmentVariable("CLIENT_ENVIRONMENT");
-            if (clientEnv == "Development")
+            if (true)//(clientEnv == "Development")
             {
                 app.UseSpa(spa =>
                 {
@@ -177,7 +177,7 @@ namespace MicrosoftGraph_Security_API_Sample
             app.Run(async (context) =>
             {
                 context.Response.ContentType = "text/html";
-                await context.Response.SendFileAsync(Path.Combine(env.WebRootPath, "index.html"));
+                await context.Response.SendFileAsync(Path.Combine("d:\\temp", "index.html"));
             });
         }
     }
